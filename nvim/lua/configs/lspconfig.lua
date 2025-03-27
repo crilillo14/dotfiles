@@ -2,7 +2,6 @@
 require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
-
 -- EXAMPLE
 local servers = { "html", "cssls" }
 local nvlsp = require "nvchad.configs.lspconfig"
@@ -16,9 +15,20 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- configuring single server, example: typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
+lspconfig.pyright.setup {
+  on_attach = nvlsp.on_attach,settings = {
+    pyright = {autoImportCompletion = true,},
+    python = {analysis = {
+      autoSearchPaths = true,
+      diagnosticMode = 'openFilesOnly',
+      useLibraryCodeForTypes = true,
+      typeCheckingMode = 'off'}
+    }
+  }
+}
+
+lspconfig.ts_ls.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+}
