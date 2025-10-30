@@ -35,5 +35,17 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
   },
-  }
+  },
+
+  {
+  "benomahony/uv.nvim",
+  -- Optional filetype to lazy load when you open a python file 
+  -- Optional dependency, but recommended:
+  dependencies = {
+  "nvim-telescope/telescope.nvim"
+  },
+  opts = {
+    picker_integration = true,
+  },
+}
 }
