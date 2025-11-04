@@ -18,7 +18,7 @@ end, { desc = "Format file" })
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- Toggle floating terminal
-map("n", "<leader>t", "<cmd>ToggleTerm direction=float<CR>", { desc = "Open floating terminal" })
+-- map("n", "<leader>t", "<cmd>ToggleTerm direction=float<CR>", { desc = "Open floating terminal" })
 
 -- Toggle vertical split terminal
 map("n", "<leader>tv", "<cmd>ToggleTerm size=40 direction=vertical<CR>", { desc = "Open vertical terminal" })
